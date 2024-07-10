@@ -6,7 +6,12 @@ import { store } from './app/core/store/store';
 import HomePage from './app/static/HomePage';
 import ChatPage from './app/static/ChatPage';
 
-const Stack = createStackNavigator();
+type RootStackParamList = {
+  Home: undefined;
+  Chat: { chatId: string };
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 const App: React.FC = () => {
   return (
